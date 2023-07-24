@@ -40,12 +40,12 @@ const routes = [
         component: () => import('@/views/Certification.vue'),
       },
       {
-        path: '/sobre',
+        path: '/about',
         name: 'Sobre',
         component: () => import('@/views/About.vue'),
       },
       {
-        path: '/recursos',
+        path: '/resources',
         name: 'Recursos',
         component: () => import('@/views/Resources.vue'),
       },

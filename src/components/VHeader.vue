@@ -5,8 +5,8 @@
 
     <v-spacer></v-spacer>
 
-    <v-btn text @click="navigateTo('Recursos')">Recursos</v-btn>
-    <v-btn text @click="navigateTo('Sobre')">Sobre</v-btn>
+    <v-btn text @click="navigateTo('resources')">Recursos</v-btn>
+    <v-btn text @click="navigateTo('about')">Sobre</v-btn>
     <v-btn v-if="!userLoggedIn" @click="showLoginDialog">Login</v-btn>
     <v-menu v-else>
     </v-menu>

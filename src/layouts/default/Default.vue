@@ -1,14 +1,17 @@
 <template>
   <v-app>
-    <VHeader :pageTitle="pageTitle" />
+    <VHeader :pageTitle="pageTitle" v-if="showHeader" />
 
     <default-view />
   </v-app>
 </template>
 
-<script lang="ts" setup>
-  import DefaultView from './View.vue'
-  import VHeader from '@/components/VHeader.vue'
+<script setup>
+  import { useRoute } from 'vue-router';
+  import DefaultView from './View.vue';
+  import VHeader from '@/components/VHeader.vue';
 
   const pageTitle = 'Athenas Academy';
+  const route = useRoute();
+  const showHeader = route.name !== 'Login';
 </script>
