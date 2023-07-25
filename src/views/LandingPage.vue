@@ -1,7 +1,8 @@
 <template>
   <v-app>
-
-    <v-main-section />
+    <div class="main">
+      <v-main-section />
+    </div>
   </v-app>
 </template>
 
@@ -18,3 +19,7 @@ export default {
   }
 }
 </script>
+
+<style>
+  @import '../styles/landingPage.scss';
+</style>
