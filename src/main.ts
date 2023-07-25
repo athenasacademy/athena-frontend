@@ -8,13 +8,23 @@
 import App from './App.vue'
 
 // Composables
+import axios from 'axios';
 import { createApp } from 'vue'
 
 // Plugins
 import { registerPlugins } from '@/plugins'
 
-const app = createApp(App)
+// Store
+import store from './store';
+
+const app = createApp(App);
+
+app.config.globalProperties.$axios = axios;
 
 registerPlugins(app)
+
+app.use(store);
+
+axios.defaults.baseURL = 'https://back.athena-academy.tech/api/v1';
 
 app.mount('#app')

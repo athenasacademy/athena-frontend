@@ -10,6 +10,7 @@
                 <v-form ref="form">
                   <v-text-field v-model="email" label="Email" required></v-text-field>
                   <v-text-field v-model="password" label="Senha" type="password" required></v-text-field>
+                  <span v-if="message">Usuário ou senha Inválido!</span>
                 </v-form>
               </v-card-text>
               <v-card-actions>
@@ -44,6 +45,9 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+import router from '@/router/index.ts';
+
 export default {
   data() {
     return {
@@ -54,6 +58,7 @@ export default {
       confirmEmail: '',
       registerPassword: '',
       registrationSuccess: false,
+      message: false,
     };
   },
   computed: {
@@ -71,36 +76,38 @@ export default {
       this.registrationSuccess = false;
     },
     async login() {
-      // Implementar lógica para fazer login
       try {
-        const response = await this.$axios.post('{{baseUrl}}/api/v1/usuario/login', {
+        const response = await this.$axios.post('usuario/login', {
           senha: this.password,
-          usuario: this.email
+          usuario: this.email,
         });
-        // Lógica para armazenar o token e redirecionar para a próxima página após o login
-        console.log('Token de login:', response.data.token);
-        // Redirecionar para outra página ou exibir mensagem de sucesso
+
+        const token = response.data.token;
+        this.saveToken(token);
+
+        console.log('Token de login:', token);
+
+        router.push({ name: 'Home' });
+        this.message = true;
       } catch (error) {
+        this.message = true;
         console.error('Erro ao fazer login:', error);
-        // Exibir mensagem de erro ao usuário
       }
     },
     async register() {
-      // Implementar lógica para registrar usuário
       try {
-        const response = await this.$axios.post('{{baseUrl}}/api/v1/usuario/registrar', {
+        const response = await this.$axios.post('usuario/registrar', {
           confirmEmail: this.registerEmail,
           email: this.registerEmail,
-          senha: this.registerPassword
+          senha: this.registerPassword,
         });
-        // Lógica para exibir mensagem de sucesso no modal
         this.registrationSuccess = true;
       } catch (error) {
         console.error('Erro ao registrar usuário:', error);
-        // Exibir mensagem de erro ao usuário
       }
-    }
-  }
+    },
+    ...mapActions(['saveToken']),
+  },
 };
 </script>
 
