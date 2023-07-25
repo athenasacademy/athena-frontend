@@ -69,6 +69,19 @@
         consistente e de fácil leitura, facilitando a colaboração entre os membros da equipe de desenvolvimento e a
         detecção precoce de possíveis erros.
       </p>
+
+      <h2>Vuex</h2>
+      <p>
+
+O Vuex é um padrão de gerenciamento de estado e uma biblioteca de gerenciamento de estado centralizada para aplicações Vue.js.
+Ele desempenha um papel fundamental ao lidar com a complexidade de comunicação e compartilhamento de dados entre os componentes
+de uma aplicação Vue. O Vuex permite criar uma "store" global onde o estado centralizado da aplicação é armazenado, tornando-o
+acessível de forma reativa a todos os componentes. Com o Vuex, é possível atualizar o estado de maneira previsível e garantir
+que todas as partes da aplicação estejam sincronizadas. Além disso, o Vuex oferece ferramentas para organizar e modularizar o
+estado global, facilitando o desenvolvimento, a manutenção e a escalabilidade do projeto. No projeto Athenas Academy, o Vuex foi
+adotado para gerenciar o estado global da aplicação, permitindo a interação entre diferentes componentes e proporcionando um fluxo
+de dados consistente e confiável em toda a aplicação.
+      </p>
     </div>
     <br />
     <br />
