@@ -1,0 +1,12 @@
+.avatar-div{
+    display: inline-flex;    
+    align-items: center;
+}
+
+.avatar-pic{
+    width: 150px;
+    border-radius: 50%;
+    height: 150px;
+    object-fit: cover;
+    border: none;
+}

@@ -60,6 +60,15 @@
         utilizado para gerenciar o código do Athenas Academy e permitir
         colaboração entre os membros da equipe de desenvolvimento.
       </p>
+
+      <h2>Lint</h2>
+      <p>
+        O Lint é uma ferramenta de análise de código estática que ajuda a identificar e corrigir problemas no código-fonte
+        de forma automática. No projeto Athenas Academy, utilizamos o Lint para garantir que o código JavaScript e Vue.js
+        esteja escrito seguindo padrões de estilo e boas práticas de programação. Isso ajuda a manter o código limpo,
+        consistente e de fácil leitura, facilitando a colaboração entre os membros da equipe de desenvolvimento e a
+        detecção precoce de possíveis erros.
+      </p>
     </div>
     <br />
     <br />
