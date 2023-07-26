@@ -1,13 +1,3 @@
-<script setup lang="ts">
-function voltarParaEtapaAnterior() {
-
-}
-
-function avancarParaProximaEtapa() {
-
-}
-</script>
-
 <template>
   <v-container>
     <v-row>
@@ -158,9 +148,9 @@ function avancarParaProximaEtapa() {
         <v-row>
           <v-col>
             <v-row justify="end">
-              <v-btn v-on:click="voltarParaEtapaAnterior()" 
-              aling-center 
-              variant="plain" 
+              <v-btn v-on:click="voltarParaEtapaAnterior()"
+              aling-center
+              variant="plain"
               color="light-blue-darken-4"
               >Voltar</v-btn
               >
@@ -170,7 +160,7 @@ function avancarParaProximaEtapa() {
                 variant="flat"
                 bg-color="#AE8F59"
                 >Avançar</v-btn
-              > 
+              >
             </v-row>
           </v-col>
         </v-row>
@@ -178,3 +168,13 @@ function avancarParaProximaEtapa() {
     </v-row>
   </v-container>
 </template>
+
+<script setup lang="ts">
+function voltarParaEtapaAnterior() {
+
+}
+
+function avancarParaProximaEtapa() {
+
+}
+</script>

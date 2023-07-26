@@ -54,7 +54,7 @@ export default {
         { name: 'classroom', displayName: 'Curso' },
         { name: 'payment', displayName: 'Pagamentos' },
         { name: 'certification', displayName: 'Certificados' },
-        { name: 'admin', displayName: 'Administardor'}
+        { name: 'admin', displayName: 'Administrador'}
       ]
     };
   },

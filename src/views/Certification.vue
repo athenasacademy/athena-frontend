@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <VHeader pageTitle="Tela Certificados" />
+    <VHeader pageTitle="Certificados" />
 
     <v-main>
       <div>

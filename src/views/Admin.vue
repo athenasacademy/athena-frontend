@@ -1,28 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue';
-import VFormRegistrationCurse from '../components/Admin/VFormRegistrationCurse.vue'
-
-
-interface Tab {
-  text: string;
-  value: number;
-}
-
-const tabAdministrador: number = 1;
-const tabCadastroCursos: number = 2;
-
-const tab = ref<number>(tabAdministrador);
-const tabs = ref<Tab[]>([
-  {
-    text: "Administrador",
-    value: tabAdministrador,
-  },
-  {
-    text: "Cadastro de Cursos",
-    value: tabCadastroCursos,
-  },
-]);
-</script>
 
 <template>
   <div class="page-wrapper">
@@ -47,27 +22,31 @@ const tabs = ref<Tab[]>([
   </div>
 </template>
 
-<style scoped>
-.v-slide-group-item--active {
-  background-color: #AE8F59;
-  color: white !important;
+<script setup lang="ts">
+import { ref } from 'vue';
+import VFormRegistrationCurse from '../components/Admin/VFormRegistrationCurse.vue'
+
+interface Tab {
+  text: string;
+  value: number;
 }
 
-.color-white {
-  background-color: white;
-}
+const tabAdministrador: number = 1;
+const tabCadastroCursos: number = 2;
 
-.page-wrapper {
-  background-color: #eeeeee;
-}
+const tab = ref<number>(tabAdministrador);
+const tabs = ref<Tab[]>([
+  {
+    text: "Administrador",
+    value: tabAdministrador,
+  },
+  {
+    text: "Cadastro de Cursos",
+    value: tabCadastroCursos,
+  },
+]);
+</script>
 
-.rounded-container {
-  border-radius: 5px;
-}
-</style>
-
-<style>
-body {
-  background-color: #eeeeee;
-}
+<style lang="scss">
+  @import '../styles/admin.scss';
 </style>
