@@ -53,7 +53,8 @@ export default {
         { name: 'registration', displayName: 'Matrícula' },
         { name: 'classroom', displayName: 'Curso' },
         { name: 'payment', displayName: 'Pagamentos' },
-        { name: 'certification', displayName: 'Certificados' }
+        { name: 'certification', displayName: 'Certificados' },
+        { name: 'admin', displayName: 'Administardor'}
       ]
     };
   },
