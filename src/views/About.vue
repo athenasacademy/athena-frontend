@@ -55,7 +55,7 @@
 
     <v-divider></v-divider>
 
-    <h2>Gabriel Alexandre da Queiroz Maranhão Correia</h2>
+    <h2>Gabriel Alexandre da Queiroz Maranhão Correia - 3 metros de pica!!!</h2>
     <div class="avatar-div">
       <img class="avatar-pic" src="../assets/DevPics/gabriel.svg" alt="Gabriel">
       <p>
