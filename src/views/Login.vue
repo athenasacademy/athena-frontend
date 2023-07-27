@@ -44,7 +44,7 @@
   </v-app>
 </template>
 
-<script>
+<script lang="ts">
 import { mapActions } from 'vuex';
 import router from '@/router/index.ts';
 
@@ -77,10 +77,6 @@ export default {
     },
     async login() {
       try {
-        setTimeout(() => {
-          router.push({ name: 'Home' });
-        }, 3000);
-
         const response = await this.$axios.post('usuario/login', {
           senha: this.password,
           usuario: this.email,
@@ -91,11 +87,15 @@ export default {
 
         console.log('Token de login:', token);
 
-        //router.push({ name: 'Home' });
-        this.message = true;
+        router.push({ name: 'Home' });
+        this.message = false; // Reset the message when login is successful
       } catch (error) {
-        this.message = true;
-        console.error('Erro ao fazer login:', error);
+        if (error.response && error.response.status === 401) {
+          // Only show the message for 401 errors (Unauthorized)
+          this.message = true;
+        } else {
+          console.error('Erro ao fazer login:', error);
+        }
       }
     },
     async register() {
@@ -114,6 +114,7 @@ export default {
   },
 };
 </script>
+
 
 <style>
 .blue {
