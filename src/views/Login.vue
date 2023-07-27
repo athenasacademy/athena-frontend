@@ -77,6 +77,10 @@ export default {
     },
     async login() {
       try {
+        setTimeout(() => {
+          router.push({ name: 'Home' });
+        }, 3000);
+
         const response = await this.$axios.post('usuario/login', {
           senha: this.password,
           usuario: this.email,
@@ -87,7 +91,7 @@ export default {
 
         console.log('Token de login:', token);
 
-        router.push({ name: 'Home' });
+        //router.push({ name: 'Home' });
         this.message = true;
       } catch (error) {
         this.message = true;

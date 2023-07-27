@@ -6,7 +6,7 @@
   </v-app>
 </template>
 
-<script setup>
+<script setup lang="ts">
   import { useRoute } from 'vue-router';
   import DefaultView from './View.vue';
   import VHeader from '@/components/VHeader.vue';

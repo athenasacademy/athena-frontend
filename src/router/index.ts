@@ -7,7 +7,7 @@ const routes = [
     component: () => import('@/layouts/default/Default.vue'),
     children: [
       {
-        path: '',
+        path: '/home',
         name: 'Home',
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
@@ -51,7 +51,7 @@ const routes = [
         component: () => import('@/views/Resources.vue'),
       },
       {
-        path: '/login',
+        path: '',
         name: 'Login',
         component: () => import('@/views/Login.vue'),
       },

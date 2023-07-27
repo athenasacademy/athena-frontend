@@ -7,7 +7,7 @@
 
     <v-btn text @click="navigateTo('resources')">Recursos</v-btn>
     <v-btn text @click="navigateTo('about')">Sobre</v-btn>
-    <v-btn v-if="!userLoggedIn" @click="showLoginDialog">Login</v-btn>
+    <v-btn v-if="!userLoggedIn" click="navigateTo('login')" @click="showLoginDialog">Login</v-btn>
     <v-menu v-else>
     </v-menu>
   </v-app-bar>
@@ -44,6 +44,7 @@ export default {
   },
   data() {
     return {
+      loginModal: false,
       drawer: false,
       userLoggedIn: false,
       userLogin: 'Usuário',
