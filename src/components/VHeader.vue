@@ -7,7 +7,7 @@
 
     <v-btn text @click="navigateTo('resources')">Recursos</v-btn>
     <v-btn text @click="navigateTo('about')">Sobre</v-btn>
-    <v-btn v-if="!userLoggedIn" click="navigateTo('login')" @click="showLoginDialog">Login</v-btn>
+    <v-btn v-if="!userLoggedIn" click="navigateTo('home')" @click="showLoginDialog">Login</v-btn>
     <v-menu v-else>
     </v-menu>
   </v-app-bar>
@@ -34,7 +34,7 @@
   </v-navigation-drawer>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   props: {
     pageTitle: {
@@ -48,7 +48,7 @@ export default {
       drawer: false,
       userLoggedIn: false,
       userLogin: 'Usuário',
-      userAvatar: '', // Coloque aqui o caminho para a imagem do avatar do usuário
+      userAvatar: '',
       otherScreens: [
         { name: 'subscription', displayName: 'Inscrição' },
         { name: 'registration', displayName: 'Matrícula' },
