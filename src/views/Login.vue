@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main>
+    <v-main class="login-background">
       <v-container fluid>
         <v-row justify="center">
           <v-col cols="12" sm="8" md="6">
@@ -128,6 +128,7 @@ export default {
     async register() {
       try {
         const response = await this.$axios.post('usuario/registrar', {
+          confirmEmail: this.confirmEmail,
           email: this.registerEmail,
           senha: this.registerPassword,
         });
@@ -135,6 +136,11 @@ export default {
         console.log(response);
       } catch (error) {
         console.error('Erro ao registrar usuário:', error);
+        console.log('usuario/registrar', {
+          confirmEmail: this.confirmEmail,
+          email: this.registerEmail,
+          senha: this.registerPassword,
+        });
       }
     },
     ...mapActions(['saveToken']),
@@ -143,11 +149,5 @@ export default {
 </script>
 
 <style>
-.blue {
-  background-color: #1a237e;
-}
-
-.golden {
-  color: #ffd54f;
-}
+@import '../styles/login.scss';
 </style>
