@@ -34,7 +34,7 @@
   </v-navigation-drawer>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   props: {
     pageTitle: {

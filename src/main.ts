@@ -19,11 +19,10 @@ import store from './store';
 
 const app = createApp(App);
 
-app.config.globalProperties.$axios = axios;
-
 registerPlugins(app)
 
-app.use(store);
+//app.use(store);
+
 app.config.globalProperties.$axios = axios;
 axios.defaults.baseURL = 'https://back.athena-academy.tech/api/v1';
 
