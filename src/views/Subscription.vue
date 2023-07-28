@@ -3,10 +3,19 @@
     <VHeader pageTitle="Inscrição" />
 
     <v-main>
-      <div>
-        <h1>Tela de Inscrição</h1>
-        <p>Aqui está o conteúdo da Tela de Inscrição.</p>
-      </div>
+      <SubscriptionForm />
     </v-main>
   </v-app>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import SubscriptionForm from '../components/SubscriptionForm.vue';
+
+export default defineComponent({
+  components: {
+    SubscriptionForm,
+  },
+});
+</script>
+
