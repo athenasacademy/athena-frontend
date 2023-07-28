@@ -9,8 +9,14 @@
               <v-card-text>
                 <v-form ref="form">
                   <v-text-field v-model="email" label="Email" required></v-text-field>
-                  <v-text-field v-model="password" label="Senha" type="password" required></v-text-field>
-                  <span v-if="message">Usuário ou senha Inválido!</span>
+                  <v-text-field
+                    v-model="password"
+                    label="Senha"
+                    type="password"
+                    required
+                    :rules="[checkPasswordRules]"
+                  ></v-text-field>
+                  <span v-if="passwordErrorMessage">{{ passwordErrorMessage }}</span>
                 </v-form>
               </v-card-text>
               <v-card-actions>
@@ -30,7 +36,14 @@
           <v-form ref="registerForm">
             <v-text-field v-model="registerEmail" label="Email" required></v-text-field>
             <v-text-field v-model="confirmEmail" label="Confirmar Email" required></v-text-field>
-            <v-text-field v-model="registerPassword" label="Senha" type="password" required></v-text-field>
+            <v-text-field
+              v-model="registerPassword"
+              label="Senha"
+              type="password"
+              required
+              :rules="[checkPasswordRules]"
+            ></v-text-field>
+            <span v-if="passwordErrorMessage">{{ passwordErrorMessage }}</span>
           </v-form>
           <v-alert v-if="registrationSuccess" type="success" icon="mdi-check-circle-outline">Registro feito com sucesso!</v-alert>
         </v-card-text>
@@ -46,7 +59,7 @@
 
 <script lang="ts">
 import { mapActions } from 'vuex';
-import router from '@/router/index.ts';
+import router from '../router/index';
 
 export default {
   data() {
@@ -58,12 +71,30 @@ export default {
       confirmEmail: '',
       registerPassword: '',
       registrationSuccess: false,
-      message: false,
+      passwordErrorMessage: '',
     };
   },
   computed: {
+    checkPasswordRules() {
+      return (value: string) => {
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,20}$/;
+        if (!regex.test(value)) {
+          this.passwordErrorMessage =
+            'A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula, um número, um caractere especial e ter entre 6 e 20 caracteres.';
+          return false;
+        } else {
+          this.passwordErrorMessage = '';
+          return true;
+        }
+      };
+    },
     canRegister() {
-      return this.registerEmail === this.confirmEmail && this.registerEmail !== '' && this.registerPassword !== '';
+      return (
+        this.registerEmail === this.confirmEmail &&
+        this.registerEmail !== '' &&
+        this.registerPassword !== '' &&
+        this.passwordErrorMessage === ''
+      );
     },
   },
   methods: {
@@ -85,14 +116,10 @@ export default {
         const token = response.data.token;
         this.saveToken(token);
 
-        console.log('Token de login:', token);
-
         router.push({ name: 'Home' });
-        this.message = false; // Reset the message when login is successful
       } catch (error) {
         if (error.response && error.response.status === 401) {
-          // Only show the message for 401 errors (Unauthorized)
-          this.message = true;
+          console.log('Credenciais inválidas.');
         } else {
           console.error('Erro ao fazer login:', error);
         }
@@ -101,11 +128,11 @@ export default {
     async register() {
       try {
         const response = await this.$axios.post('usuario/registrar', {
-          confirmEmail: this.registerEmail,
           email: this.registerEmail,
           senha: this.registerPassword,
         });
         this.registrationSuccess = true;
+        console.log(response);
       } catch (error) {
         console.error('Erro ao registrar usuário:', error);
       }
@@ -114,7 +141,6 @@ export default {
   },
 };
 </script>
-
 
 <style>
 .blue {

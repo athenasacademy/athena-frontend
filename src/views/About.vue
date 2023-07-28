@@ -57,9 +57,9 @@
 
     <h2>Gabriel Alexandre da Queiroz Maranhão Correia</h2>
     <div class="avatar-div">
-      <img class="avatar-pic" src="../assets/DevPics/gabriel.svg" alt="Gabriel">
+      <img class="avatar-pic" src="../assets/DevPics/gabriel.jpg" alt="Gabriel">
       <p>
-
+        "O treinamento Ânima Upskilling foi uma experiência excelente onde pude melhorar minhas habilidades como desenvolvedor, obter novos conceitos e conhecimentos, praticar networking com os colegas de turma, ter desafios novos como desenvolvimento de aplicações desktop com C# e os desafios de codificação propostos durante o curso, ter o Danilo Aparecido como nosso tutor durante este tempo fez toda a diferença no profissional que sou, agradeço a ele por todo o conhecimento que nos foi passado e também a ânima e a Gama por terem me concedido mais esta oportunidade e poder participar do ânima upskilling.""
       </p>
     </div>
     <br>
@@ -70,7 +70,7 @@
     <div class="avatar-div">
       <img class="avatar-pic" src="../assets/DevPics/hugo.jpg" alt="Hugo">
       <p>
-        "O treinamento de  upskilling da Gama foi uma experiência verdadeiramente enriquecedora, que realmente acelerou minha carreira num nível que eu não imaginaria por anos se fosse aprender apenas com o dia a dia. Mergulhar no ciclo completo da aplicação mudou a forma como enxergo programação para além do código ou linguagem. Entender a visão arquitetural de um programa me trouxe confiança e abriu novos horizontes para estabelecer um marco no meu desenvolvimento e continuar progredindo de acordo com o avanço de novas tecnologias partindo de uma base bem estabelecida. Finalizo bastante satisfeito e agradecido de ter tido esta oportunidade de evolução."
+
       </p>
     </div>
     <br>
