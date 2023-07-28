@@ -14,7 +14,7 @@
             <!-- colocar os componentes ou view Admin -->
           </v-row>
           <v-row v-if="tab === tabCadastroCursos">
-            <VFormRegistrationCurse/>
+            <CourseAdd/>
           </v-row>
         </v-col>
       </v-row>
@@ -25,6 +25,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import VFormRegistrationCurse from '../components/Admin/VFormRegistrationCurse.vue'
+import CourseAdd from '../components/CourseAdd.vue'
 
 interface Tab {
   text: string;
