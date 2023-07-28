@@ -1,25 +1,28 @@
 <template>
   <v-app>
     <div class="main">
-      <v-main-section />
+
+      <CourseAdd />
+
     </div>
   </v-app>
 </template>
 
-<script>
-import VMainSection from '@/components/VMainSection.vue'
+<script lang="ts">
+import CourseAdd from '@/components/CourseAdd.vue';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
   components: {
-    VMainSection
+    CourseAdd,
   },
   setup() {
     const pageTitle = 'Athenas Academy - Landing Page';
     return { pageTitle };
-  }
-}
+  },
+});
 </script>
 
 <style>
-  @import '../styles/landingPage.scss';
+@import '../styles/landingPage.scss';
 </style>

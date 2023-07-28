@@ -15,8 +15,10 @@
     "openssl": "^2.0.0",
     "pinia": "^2.0.0",
     "roboto-fontface": "*",
+    "v-mask": "^2.3.0",
     "vue": "^3.2.0",
     "vue-router": "^4.0.0",
+    "vuelidate": "^0.7.7",
     "vuetify": "^3.0.0",
     "vuex": "^4.1.0",
     "webfontloader": "^1.0.0"
