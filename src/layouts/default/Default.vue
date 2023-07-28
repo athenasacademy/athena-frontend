@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <VHeader :pageTitle="pageTitle" v-if="showHeader" />
+    <VHeader :pageTitle="pageTitle" v-if="!showHeader" />
 
     <default-view />
   </v-app>
@@ -13,5 +13,5 @@
 
   const pageTitle = 'Athenas Academy';
   const route = useRoute();
-  const showHeader = route.name !== 'Login';
+  const showHeader = route.name == 'Login';
 </script>

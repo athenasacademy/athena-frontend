@@ -4,7 +4,7 @@
 
     <v-main>
       <div>
-        <h1>Tela Pagamentos</h1>
+        <h1>Pagamentos</h1>
 
         <div v-if="pagamentos.length > 0">
           <h2>Lista de Pagamentos</h2>

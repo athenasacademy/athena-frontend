@@ -3,6 +3,8 @@
     <VHeader pageTitle="Inscrição" />
 
     <v-main>
+
+      <h1>Incrição</h1>
       <SubscriptionForm />
     </v-main>
   </v-app>

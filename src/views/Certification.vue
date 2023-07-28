@@ -3,8 +3,7 @@
     <VHeader pageTitle="Certificados" />
     <v-main>
       <div>
-        <h1>Tela Certificados</h1>
-        <p>Aqui está o conteúdo da Tela Certificados.</p>
+        <h1>Certificados</h1>
       </div>
     </v-main>
   </v-app>
