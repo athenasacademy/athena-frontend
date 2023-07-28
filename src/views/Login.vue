@@ -1,4 +1,6 @@
 <template>
+    <VHeader pageTitle="Login" />
+
   <v-app>
     <v-main class="login-background">
       <v-container fluid>

@@ -1,4 +1,6 @@
 <template>
+    <VHeader pageTitle="Home" />
+
   <v-app>
     <div class="main">
 
