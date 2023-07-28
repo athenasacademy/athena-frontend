@@ -1,12 +1,25 @@
 <template>
   <v-app>
     <VHeader pageTitle="Matrícula" />
-
     <v-main>
       <div>
-        <h1>Tema Matrícula</h1>
-        <p>Aqui está o conteúdo do Tema Matrícula.</p>
+        <h1>Matrícula</h1>
+        <RegistrationForm />
       </div>
     </v-main>
   </v-app>
 </template>
+
+<script lang="ts">
+  import RegistrationForm from '../components/RegistrationForm.vue';
+
+  export default {
+    components: {
+      RegistrationForm
+    },
+  };
+</script>
+
+<style>
+/* Estilos personalizados aqui, se necessário */
+</style>

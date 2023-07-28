@@ -1,6 +1,9 @@
 <template>
     <VHeader pageTitle="Home" />
 
+
+    <h1>Home</h1>
+
   <v-app>
     <div class="main">
 
